@@ -1,0 +1,30 @@
+body{
+    background: #1b1b1b;
+    margin: 0%;
+}
+
+header{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    border-bottom: #858585;
+    padding: 0%;
+}
+
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    margin: 0;
+}
+
+.printers_container{
+    width: 70%;
+    margin: auto;
+}
+
+.printer{
+    display: flex;
+}
