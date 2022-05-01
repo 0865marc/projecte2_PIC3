@@ -21,10 +21,12 @@ h1{
 }
 
 .printers_container{
-    width: 70%;
+    width: 80%;
     margin: auto;
+    display: flex;
+    border:1px solid #1b1b1b;
+    background: #5e5d5d;
+    flex-wrap: wrap;
+
 }
 
-.printer{
-    display: flex;
-}

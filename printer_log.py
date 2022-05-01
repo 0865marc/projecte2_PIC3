@@ -5,19 +5,30 @@ from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
 
-class Printer_log(Base):
-     __tablename__ = 'PRINTERS_LOG'
-     
-     id = Column(Integer, primary_key=True) 
-     printer_id = Column(Integer)
-     date = Column(String())
-     time = Column(String())
-     temperature = Column(Integer)
-     humidity = Column(Integer)
-     status = Column(String)
+class Printer_log(Base):        
+        __tablename__ = 'PRINTERS_LOG'
+        
+        id = Column(Integer, primary_key=True) 
+        printer_id = Column(Integer)
+        date = Column(String())
+        time = Column(String())
+        temperature = Column(Integer)
+        humidity = Column(Integer)
+        status = Column(String)
 
-     def __repr__(self):
-        return "<Printer(printer_id={})>".format(self.printer_id)
+        def __repr__(self):
+                return "<Printer log (log number={})>".format(self.id)
+
+        def create_dict(self):
+                dict = {
+                        "printer_id" : self.printer_id,
+                        "date" : self.date,
+                        "time" : self.time,
+                        "temperature" : self.temperature,
+                        "humidity" : self.humidity,
+                        "status" : self.status
+                        }
+                return dict
 
 # Create all tables in the engine. This is equivalent to "Create Table" statements in raw SQL.
 from sqlalchemy import create_engine

@@ -1,8 +1,7 @@
 <html>
     <head>
         <title>Marc's farm</title>
-        <!-- <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet"> -->
-        <link rel="stylesheet" href="styles.css">
+        <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
     </head>
 
 
@@ -12,23 +11,29 @@
         </header>
         
         <div class="printers_container">
-            <div class="printer">
+            {% for printer_log in printer_log_table%}
+            <div>
                 <table>
-                    <tr><td>Printer name</td></tr>
+                    <tr><td>Printer {{printer_log.printer_id}}</td></tr>
                     <tr>
                         <td>Date</td>
-                        <td>12-04-2022</td>
+                        <td>{{printer_log.date}}</td>
                     </tr>
                     <tr>
                         <td>Time</td>
-                        <td>22:58</td>
+                        <td>{{printer_log.time}}</td>
                     </tr>
                     <tr>
-                        <td>Temperature ºC</td>
+                        <td>Temperature</td>
+                        <td>{{printer_log.temperature}}ºC</td>
+                    </tr>
+                    <tr>
                         <td>Humidity</td>
+                        <td>{{printer_log.humidity}} %</td>
                     </tr>
                 </table>
             </div>
+            {% endfor%}
             
         </div>
         
