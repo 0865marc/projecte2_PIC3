@@ -20,13 +20,79 @@ h1{
     margin: 0;
 }
 
-.printers_container{
-    width: 80%;
+h3{
     margin: auto;
-    display: flex;
-    border:1px solid #1b1b1b;
-    background: #5e5d5d;
-    flex-wrap: wrap;
-
 }
 
+thead{
+    font-size: large;
+}
+
+a{
+    color: white;
+    text-decoration: none; /* no underline */
+}
+
+.menu{
+    border-style: solid none;
+    border-width: 1px;
+    border-color: rgb(157, 157, 157);
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.active_option_menu{
+    padding: 2px 20px;
+}
+.active_option_menu a{
+    color: #8cb4ff;
+}
+
+
+.inactive_option_menu{
+    padding: 2px 50px;
+    background-color: rgb(44, 44, 44);
+    color: black;
+}
+.inactive_option_menu:hover a{
+    color: #8cb4ff;
+}
+
+
+.printers_container{
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.table_container{
+    padding: 20px;
+}
+
+.printer_log_table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    color: white;
+}
+
+.printer_log_table td{
+    border: 1px solid rgb(157, 157, 157);
+    padding: 8px;
+}
+
+.printer_log_table th{
+    border: 1px solid rgb(157, 157, 157);
+    background-color: rgb(3, 51, 35);
+    padding: 8px;
+}
+
+.table_value{
+    text-align: right;
+}

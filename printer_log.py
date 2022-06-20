@@ -17,7 +17,7 @@ class Printer_log(Base):
         status = Column(String)
 
         def __repr__(self):
-                return "<Printer log (log number={})>".format(self.id)
+                return "<Printer {} (log number={})>".format(self.printer_id, self.id)
 
         def create_dict(self):
                 dict = {

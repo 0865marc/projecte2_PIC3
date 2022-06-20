@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Marc's farm</title>
+        <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+    </head>
+
+
+    <body>
+        <header>
+            <h1>Welcome to the biggest 3D printer farm of my house</h1>
+        </header>
+        
+        <div class="menu">
+            <div class="active_option_menu">
+                <h3><a href="historic_data.html">Historic data </a></h3>
+            </div>
+            <div class="inactive_option_menu">
+                <h3><a href="home.html"> Main page </a></h3>
+            </div>
+        </div>
+
+        <div class="printers_container">
+            {% for printer_logs_list in printer_logs_table%}
+            <div class="table_container">
+                <table class="printer_log_table">
+                    <thead>
+                        <tr><th>Printer {{printer_logs_list[0].printer_id}}</th></tr>
+                        <tr>
+                            <td>Date</td>
+                            <td>Time</td>
+                            <td>Temperature</td>
+                            <td>Humidity</td>
+                            <td>Status</td>
+                        </tr>
+                    </thead>
+
+                    {% for log in printer_logs_list%}
+                    <tr>
+                        <td>{{log.date}}</td>
+                        <td>{{log.time}}</td>
+                        <td>{{log.temperature}}</td>
+                        <td>{{log.humidity}}</td>
+                        <td>{{log.status}}</td>
+                    </tr>
+                    {% endfor%}
+                </table>
+            </div>
+            {% endfor%}
+            
+        </div>
+        
+    </body>
+</html>

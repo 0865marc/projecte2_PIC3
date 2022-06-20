@@ -10,26 +10,42 @@
             <h1>Welcome to the biggest 3D printer farm of my house</h1>
         </header>
         
+        <div class="menu">
+            <div class="inactive_option_menu">
+                <h3><a href="historic_data.html">Historic data</a></h3>
+            </div>
+            <div class="active_option_menu">
+                <h3><a href="home.html"> Main page</a></h3>
+            </div>
+        </div>
+
         <div class="printers_container">
             {% for printer_log in printer_log_table%}
-            <div>
-                <table>
-                    <tr><td>Printer {{printer_log.printer_id}}</td></tr>
+            <div class="table_container">
+                <table class="printer_log_table">
+                    <thead>
+                        <tr><th>Printer {{printer_log.printer_id}}</th></tr>
+                    </thead>
+                    
                     <tr>
                         <td>Date</td>
-                        <td>{{printer_log.date}}</td>
+                        <td class="table_value">{{printer_log.date}}</td>
                     </tr>
                     <tr>
                         <td>Time</td>
-                        <td>{{printer_log.time}}</td>
+                        <td class="table_value">{{printer_log.time}}</td>
                     </tr>
                     <tr>
                         <td>Temperature</td>
-                        <td>{{printer_log.temperature}}ºC</td>
+                        <td class="table_value">{{printer_log.temperature}}ºC</td>
                     </tr>
                     <tr>
                         <td>Humidity</td>
-                        <td>{{printer_log.humidity}} %</td>
+                        <td class="table_value">{{printer_log.humidity}} %</td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td class="table_value">{{printer_log.status}}</td>
                     </tr>
                 </table>
             </div>
